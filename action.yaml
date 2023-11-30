@@ -1,16 +1,16 @@
-name: 'Helloworld Action'
-description: 'Executes a PowerShell script with parameters'
+name: "Helloworld Action"
+description: "Executes a PowerShell script with parameters"
 inputs:
   projectName:
-    description: 'The name of the project'
+    description: "The name of the project"
     required: true
   simulateFail:
-    description: 'Set to true to simulate a failure in the script'
+    description: "Set to true to simulate a failure in the script"
     required: false
-    default: 'false'
+    default: "false"
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - run: |
-        powershell -File ${{ github.workspace }}/helloworld-script.ps1 -projectName ${{ inputs.projectName }} -simulateFail ${{ inputs.simulateFail }}
+        powershell -File ${{ github.workspace }}/scripts/helloworld-script.ps1 -projectName ${{ inputs.projectName }} -simulateFail ${{ inputs.simulateFail }}
       shell: pwsh
