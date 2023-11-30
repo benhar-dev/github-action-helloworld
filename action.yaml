@@ -12,5 +12,5 @@ runs:
   using: "composite"
   steps:
     - run: |
-        powershell -File ${{ github.workspace }}/scripts/helloworld-script.ps1 -projectName ${{ inputs.projectName }} -simulateFail ${{ inputs.simulateFail }}
+        powershell -File ${{ github.action_path }}/scripts/helloworld-script.ps1 -projectName ${{ inputs.projectName }} -simulateFail ${{ inputs.simulateFail }}
       shell: pwsh
