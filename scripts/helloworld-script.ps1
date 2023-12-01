@@ -3,8 +3,8 @@ Write-Host "Helloworld Running"
 Write-Host "Received parameters:"
 
 # Retrieve environment variables
-$projectName = $env:MYAPP_PROJECT_NAME
-$simulateFail = if ($env:MYAPP_SIMULATE_FAIL -eq "true") { $true } else { $false }
+$projectName = $env:HELLOWORLD_PROJECT_NAME
+$simulateFail = if ($env:HELLOWORLD_SIMULATE_FAIL -eq "true") { $true } else { $false }
 
 Write-Host "Project Name: $projectName"
 Write-Host "Simulate Fail: $simulateFail"
