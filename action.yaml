@@ -13,4 +13,4 @@ runs:
   steps:
     - run: |
         powershell -File ${{ github.action_path }}/scripts/helloworld-script.ps1 -projectName ${{ inputs.projectName }} -simulateFail ${{ inputs.simulateFail }}
-      shell: pwsh
+      shell: powershell
