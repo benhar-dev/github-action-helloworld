@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run PowerShell Project Action
-        uses: benhar-dev/github-action-helloworld@v3
+        uses: benhar-dev/github-action-helloworld@v4
         with:
           projectName: "Your Project Name"
           simulateFail: "false"

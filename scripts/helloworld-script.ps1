@@ -1,11 +1,11 @@
-param (
-    [string]$projectName,
-    [string]$simulateFail
-)
-
 # Print received parameters for logging
 Write-Host "Helloworld Running"
 Write-Host "Received parameters:"
+
+# Retrieve environment variables
+$projectName = $env:MYAPP_PROJECT_NAME
+$simulateFail = if ($env:MYAPP_SIMULATE_FAIL -eq "true") { $true } else { $false }
+
 Write-Host "Project Name: $projectName"
 Write-Host "Simulate Fail: $simulateFail"
 

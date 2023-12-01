@@ -12,5 +12,9 @@ runs:
   using: "composite"
   steps:
     - run: |
-        powershell -File ${{ github.action_path }}/scripts/helloworld-script.ps1 -projectName ${{ inputs.projectName }} -simulateFail ${{ inputs.simulateFail }}
+        echo "HELLOWORLD_PROJECT_NAME=${{ inputs.projectName }}" >> $GITHUB_ENV
+        echo "HELLOWORLD_SIMULATE_FAIL=${{ inputs.simulateFail }}" >> $GITHUB_ENV
+      shell: bash
+    - run: |
+        powershell -File ${{ github.action_path }}/scripts/helloworld-script.ps1
       shell: powershell
